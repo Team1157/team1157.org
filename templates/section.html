@@ -1,0 +1,6 @@
+{# Template for site sections #}
+{% extends "base.html" %}
+
+{% block title %}{{ section.title}} - Team 1157{% endblock %}
+
+{% block content %}{{ section.content | safe }}{% endblock %}

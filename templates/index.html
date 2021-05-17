@@ -1,0 +1,28 @@
+{# Site homepage template: "/" #}
+{% extends "section.html" %}
+
+{% block title %}Team 1157{% endblock %}
+
+{% block content %}
+
+    {# Print the index file content #}
+    {{ section.content | safe }}
+
+    {# Iterate over the project pages within "/projects" #}
+    <div class="project-list">
+    {% set projects = get_section(path="projects/_index.md") %}
+    {% for project in projects.pages %}
+        <a class="project" href="{{ project.permalink }}">
+            <div class="project-text">
+                {% if project.extra.project_type %}
+                <span class="type">{{ project.extra.project_type }}</span>
+                {% endif %}
+                <span class="title">{{ project.title }}</span>
+                <span class="desc">{{ project.description }}</span>
+            </div>
+            <img src="">
+        </a>
+    {% endfor %}
+    </div>
+
+{% endblock %}

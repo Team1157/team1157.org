@@ -1,0 +1,8 @@
+{# Template for pages #}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title | safe }} - Team 1157{% endblock %}
+
+{% block content %}
+{{ page.content | safe }}
+{% endblock %}

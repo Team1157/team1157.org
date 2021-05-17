@@ -1,0 +1,127 @@
+// Global settings
+$color-gold: #e0bd1f;
+$color-purple: #2c1f47;
+$color-light-grey: #c4c4b8;
+$color-grey: #3f3b47;
+$fonts: Noto Sans,sans-serif;
+
+// Defaults
+html {
+    height: 100%;
+    overflow-y: scroll; // to make the scrollbar always show to avoid misalignment
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: $color-purple;
+    color: $color-light-grey;
+    font-family: $fonts;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+// Default element styles
+h1, h2, h3, h4, h5, h6 {
+    color: $color-gold;
+}
+
+a, a:hover, a:active, a:visited {
+    text-decoration: underline;
+    color: $color-light-grey;
+}
+
+// Main container: limit width
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Header and footer
+header {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted $color-gold;
+    
+    a.home-link {
+        text-decoration: none;
+        //font-style: italic;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-gold;
+    }
+    a.home-link:hover, a.home-link:active {
+        border-bottom: 3px solid $color-gold;
+    }
+    
+    img.logo {
+        padding-top: 5px;
+        height: 30px
+    }
+}
+
+footer {
+    flex: 0 1; // Makes the footer stick to the bottom
+    padding: 5px 0;
+    border-top: 1px dotted $color-gold;
+    text-align: center;
+    color: $color-gold;
+}
+
+// Content
+main {
+    flex: 1 0; // Makes the footer stick to the bottom
+    padding: 20px 0;
+    
+    // Remove the top margin on the first child item to unify spacing
+    > :first-child {
+        margin-top: 0;
+    }
+}
+
+// Homepage stuff
+.project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    a.project {
+        display: flex;
+        align-items: center;
+        background: $color-grey;
+        box-sizing: border-box;
+        height: 150px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 15px;
+        text-decoration: none;
+        
+        .project-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            
+            .type {
+                text-transform: uppercase;
+            }
+            
+            .title {
+                font-size: 36px;
+                font-weight: bold;
+            }
+            
+            .desc {
+            
+            }
+        }
+    }
+    a.project:hover {
+        padding: 12px;
+        border: 3px dashed $color-gold;
+    }
+}
