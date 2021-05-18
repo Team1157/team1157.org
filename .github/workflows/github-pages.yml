@@ -8,16 +8,29 @@ on:
 jobs:
   build-site:
     runs-on: ubuntu-latest
-    name: shalzz/zola-deploy-action
     steps:
-    # Needed in order to access the actual code
-    - uses: actions/checkout@master
-    # The action that builds the site and deploys it
-    - name: shalzz/zola-deploy-action
-      uses: shalzz/zola-deploy-action@master
-      env:
-        # Deploy the built site to the branch `gh-pages`
-        PAGES_BRANCH: gh-pages
-        # TEMP: Change this to the actual domain (or just remove it) once the site becomes mature enough to use the actual domain
-        BUILD_FLAGS: --base-url https://team1157.github.io/
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Fetch the code
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      # Install Zola from the github releases page
+      - name: Install Zola
+        run: |
+          curl "https://github.com/getzola/zola/releases/download/v0.13.0/zola-v0.13.0-x86_64-unknown-linux-gnu.tar.gz" | sudo tar xzf - -C /usr/local/bin
+
+      # Build the site
+      - name: Build Site
+        run: zola build --base-url https://team1157.github.io
+      
+      # Commit the built site
+      - name: Push site
+        run: |
+          cd public
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions-bot@users.noreply.github.com"
+          git add .
+          git commit -m "Build site"
+          git branch -m gh-pages
+          git push --force "https://${{ secrets.DEPLOY_TOKEN }}@github.com/team1157/team1157.org.git" gh-pages:gh-pages
+        
