@@ -19,5 +19,5 @@ jobs:
         # Deploy the built site to the branch `gh-pages`
         PAGES_BRANCH: gh-pages
         # TEMP: Change this to the actual domain (or just remove it) once the site becomes mature enough to use the actual domain
-        BUILD_FLAGS: --base_url https://team1157.github.io/
+        BUILD_FLAGS: --base-url https://team1157.github.io/
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
