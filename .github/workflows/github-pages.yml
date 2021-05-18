@@ -1,0 +1,23 @@
+name: Build site
+# Only build and deploy when pushed onto `master`
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    name: shalzz/zola-deploy-action
+    steps:
+    # Needed in order to access the actual code
+    - uses: actions/checkout@master
+    # The action that builds the site and deploys it
+    - name: shalzz/zola-deploy-action
+      uses: shalzz/zola-deploy-action@master
+      env:
+        # Deploy the built site to the branch `gh-pages`
+        PAGES_BRANCH: gh-pages
+        # TEMP: Change this to the actual domain (or just remove it) once the site becomes mature enough to use the actual domain
+        BUILD_FLAGS: --base_url https://team1157.github.io/
+        TOKEN: ${{ secrets.TOKEN }}
