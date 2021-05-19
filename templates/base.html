@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> {# Makes the size responsive #}
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ config.base_url }}/style.css"> {# Main stylesheet #}
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"> {# Noto Sans regular and bold fonts #}
-    <link rel="icon" href="{{ config.base_url }}/robosharks-logo-bg.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Teko:wght@600&display=swap"
+        rel="stylesheet"> {# Fonts: Noto Sans Regular and Bold, Teko Semi-bold #}
+    <link rel="icon" href="{{ config.base_url }}/robosharks-logo-icon.svg">
     {% endblock %}
 </head>
 <body>
+
+<div class="container">
 
 <header>{% block header %}
     <nav>
@@ -19,9 +23,13 @@
     </nav>
 {% endblock %}</header>
 
-<main>{% block content %}{% endblock %}</main>
+<main>
+{% block content %}{% endblock %}
+</main>
 
 <footer>{% block footer %}© 2021 Boulder Robotics Alliance{% endblock %}</footer>
+
+</div>
 
 </body>
 </html>

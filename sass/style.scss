@@ -1,16 +1,22 @@
-// Color
-//$bg: #3f3b47;
-$bg: #36323e;
-$bright-bg: #2c1f47;
-$bright-bg-hover: #8c71c1;
-//$dark-bg: #111111;
-$dark-bg: #1c1c1c;
-$dark-bg-hover: #444444;
-$text: #c4c4b8;
-$accent: #e0bd1f;
+// Raw (no-context) colors
+$color-dark-grey:       #1c1c1c;
+$color-grey:            #36323e;
+$color-light-grey:      #c4c4b8;
+$color-purple:          #2c1f47;
+$color-light-purple:    #8c71c1;
+$color-gold:            #e0bd1f;
+
+// Colors by usage
+$bg:        $color-dark-grey;
+$light-bg:  $color-grey;
+$accent-bg: $color-purple;
+
+$fg:        $color-light-grey;
+$accent-fg: $color-gold;
 
 // Font stack
 $fonts: Noto Sans,sans-serif;
+$fonts-display: Teko,sans-serif;
 
 // Defaults
 html {
@@ -22,8 +28,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: $dark-bg;
-    color: $text;
+    background: $bg;
+    color: $fg;
     font-family: $fonts;
     font-size: 15px;
     font-weight: 400;
@@ -31,60 +37,74 @@ body {
 
 // Default element styles
 h1, h2, h3, h4, h5, h6 {
-    color: $accent;
+    color: $accent-fg;
 }
 
 a, a:hover, a:active, a:visited {
     text-decoration: underline;
-    color: $text;
+    color: $fg;
 }
 
-// Main container: limit width
+// Main flexbox container
 .container {
     display: flex;
     flex-direction: column;
+    //align-items: center;
     height: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    //max-width: 1000px;
+    //margin: 0 auto;
+    //padding: 0 20px;
 }
 
 // Header and footer
 header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px dotted $accent;
-    background: $bright-bg;
+    padding: 10px 15px;
+    //border-bottom: 1px dotted $accent;
+    background: $accent-bg;
     
-    a.home-link {
-        text-decoration: none;
-        //font-style: italic;
-        font-size: 24px;
-        font-weight: bold;
-        color: $accent;
-    }
-    a.home-link:hover, a.home-link:active {
-        border-bottom: 3px solid $accent;
-    }
+    nav {
+        height: 100%;
+        display: flex;
     
-    img.logo {
-        padding-top: 5px;
-        height: 30px
+        a.home-link {
+            text-decoration: none; // remove underline
+            //font-style: italic;
+            font-family: $fonts-display;
+            font-size: 36px;
+            font-weight: 600;
+            // Fix display font's weird properties
+            margin-top: 8px;
+            margin-bottom: 3px;
+            line-height: 0.8;
+            color: $accent-fg;
+        }
+        a.home-link:hover, a.home-link:active {
+            margin-bottom: 0;
+            border-bottom: 3px solid $accent-fg;
+        }
+        
+        img.logo {
+            padding-top: 5px;
+            height: 30px
+        }
     }
 }
 
 footer {
     flex: 0 1; // Makes the footer stick to the bottom
     padding: 5px 0;
-    border-top: 1px dotted $accent;
+    border-top: 1px dotted $accent-fg;
     text-align: center;
-    color: $accent;
+    color: $accent-fg;
 }
 
 // Content
 main {
     flex: 1 0; // Makes the footer stick to the bottom
-    padding: 20px 0;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
     
     // Remove the top margin on the first child item to unify spacing
     > :first-child {
@@ -101,11 +121,12 @@ main {
     a.project {
         display: flex;
         align-items: center;
-        background: $bg;
+        background: $light-bg;
+        border-radius: 2px;
         box-sizing: border-box;
         height: 150px;
         width: 100%;
-        margin-top: 15px;
+        margin-bottom: 15px;
         padding: 15px;
         text-decoration: none;
         
@@ -131,6 +152,6 @@ main {
     }
     a.project:hover {
         padding: 13px;
-        border: 2px solid $accent;
+        border: 2px solid $accent-fg;
     }
 }
