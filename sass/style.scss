@@ -15,7 +15,7 @@ $fg:        $color-light-grey;
 $accent-fg: $color-gold;
 
 // Font stack
-$fonts: Noto Sans,sans-serif;
+$fonts:         Noto Sans,sans-serif;
 $fonts-display: Teko,sans-serif;
 
 // Defaults
@@ -122,18 +122,19 @@ main {
         display: flex;
         align-items: center;
         background: $light-bg;
-        border-radius: 2px;
+        border-radius: 1px;
         box-sizing: border-box;
         height: 150px;
         width: 100%;
         margin-bottom: 15px;
-        padding: 15px;
         text-decoration: none;
         
         .project-text {
             display: flex;
+            flex: 1 0;
             flex-direction: column;
             align-items: flex-start;
+            padding: 15px;
             
             .type {
                 text-transform: uppercase;
@@ -149,9 +150,19 @@ main {
                 
             }
         }
+        
+        img.project-banner {
+            flex: 0 1;
+            height: 100%;
+            clip-path: polygon(
+                100px 0,
+                0 100%,
+                100% 100%,
+                100% 0
+            )
+        }
     }
     a.project:hover {
-        padding: 13px;
-        border: 2px solid $accent-fg;
+        outline: 2px solid $accent-fg;
     }
 }

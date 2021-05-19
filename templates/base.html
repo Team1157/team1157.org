@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> {# Makes the size responsive #}
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ config.base_url }}/style.css"> {# Main stylesheet #}
+    <link rel="stylesheet" href="{{ config.base_url | safe }}/style.css"> {# Main stylesheet #}
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Teko:wght@600&display=swap"
         rel="stylesheet"> {# Fonts: Noto Sans Regular and Bold, Teko Semi-bold #}
-    <link rel="icon" href="{{ config.base_url }}/robosharks-logo-icon.svg">
+    <link rel="icon" href="{{ config.base_url | safe }}/robosharks-logo-icon.svg">
     {% endblock %}
 </head>
 <body>
@@ -19,7 +19,7 @@
 
 <header>{% block header %}
     <nav>
-        <a class="home-link" href="{{ config.base_url }}">Boulder Robotics Alliance</a>
+        <a class="home-link" href="{{ config.base_url | safe }}">Boulder Robotics Alliance</a>
     </nav>
 {% endblock %}</header>
 

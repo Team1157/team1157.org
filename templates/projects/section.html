@@ -6,7 +6,7 @@
 
 <div class="project-list">
 {% for project in section.pages %}
-    <a class="project" href="{{ project.permalink }}">
+    <a class="project" href="{{ project.permalink | safe }}">
         <div class="project-text">
             {% if project.extra.project_type %}
             <span class="type">{{ project.extra.project_type }}</span>
@@ -14,7 +14,9 @@
             <span class="title">{{ project.title }}</span>
             <span class="desc">{{ project.description }}</span>
         </div>
-        <img src="">
+        {% if project.extra.banner %}
+        <img class="project-banner" src="{{ config.base_url }}{{ project.extra.banner | safe}}">
+        {% endif %}
     </a>
 {% endfor %}
 </div>

@@ -30,6 +30,6 @@ jobs:
           BRANCH: gh-pages
           FOLDER: public
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Build and desploy site"
+          MESSAGE: "Build and deploy site"
           
           
