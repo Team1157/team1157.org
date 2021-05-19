@@ -13,17 +13,15 @@
 </head>
 <body>
 
-<div class="container">
-    <header>{% block header %}
-        <nav>
-            <a class="home-link" href="{{ config.base_url }}">Boulder Robotics Alliance</a>
-        </nav>
-    {% endblock %}</header>
-    
-    <main>{% block content %}{% endblock %}</main>
-    
-    <footer>{% block footer %}© 2021 Boulder Robotics Alliance{% endblock %}</footer>
-</div>
+<header>{% block header %}
+    <nav>
+        <a class="home-link" href="{{ config.base_url }}">Boulder Robotics Alliance</a>
+    </nav>
+{% endblock %}</header>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer>{% block footer %}© 2021 Boulder Robotics Alliance{% endblock %}</footer>
 
 </body>
 </html>

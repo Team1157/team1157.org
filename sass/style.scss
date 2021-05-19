@@ -1,8 +1,15 @@
-// Global settings
-$color-gold: #e0bd1f;
-$color-purple: #2c1f47;
-$color-light-grey: #c4c4b8;
-$color-grey: #3f3b47;
+// Color
+//$bg: #3f3b47;
+$bg: #36323e;
+$bright-bg: #2c1f47;
+$bright-bg-hover: #8c71c1;
+//$dark-bg: #111111;
+$dark-bg: #1c1c1c;
+$dark-bg-hover: #444444;
+$text: #c4c4b8;
+$accent: #e0bd1f;
+
+// Font stack
 $fonts: Noto Sans,sans-serif;
 
 // Defaults
@@ -15,8 +22,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: $color-purple;
-    color: $color-light-grey;
+    background: $dark-bg;
+    color: $text;
     font-family: $fonts;
     font-size: 15px;
     font-weight: 400;
@@ -24,12 +31,12 @@ body {
 
 // Default element styles
 h1, h2, h3, h4, h5, h6 {
-    color: $color-gold;
+    color: $accent;
 }
 
 a, a:hover, a:active, a:visited {
     text-decoration: underline;
-    color: $color-light-grey;
+    color: $text;
 }
 
 // Main container: limit width
@@ -37,26 +44,27 @@ a, a:hover, a:active, a:visited {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-width: 850px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 // Header and footer
 header {
-    margin-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px dotted $color-gold;
+    border-bottom: 1px dotted $accent;
+    background: $bright-bg;
     
     a.home-link {
         text-decoration: none;
         //font-style: italic;
         font-size: 24px;
         font-weight: bold;
-        color: $color-gold;
+        color: $accent;
     }
     a.home-link:hover, a.home-link:active {
-        border-bottom: 3px solid $color-gold;
+        border-bottom: 3px solid $accent;
     }
     
     img.logo {
@@ -68,9 +76,9 @@ header {
 footer {
     flex: 0 1; // Makes the footer stick to the bottom
     padding: 5px 0;
-    border-top: 1px dotted $color-gold;
+    border-top: 1px dotted $accent;
     text-align: center;
-    color: $color-gold;
+    color: $accent;
 }
 
 // Content
@@ -93,7 +101,7 @@ main {
     a.project {
         display: flex;
         align-items: center;
-        background: $color-grey;
+        background: $bg;
         box-sizing: border-box;
         height: 150px;
         width: 100%;
@@ -122,7 +130,7 @@ main {
         }
     }
     a.project:hover {
-        padding: 12px;
-        border: 3px dashed $color-gold;
+        padding: 13px;
+        border: 2px solid $accent;
     }
 }
