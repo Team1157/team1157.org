@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://team1157.github.io/sitemap.xml
+Sitemap: https://team1157.github.io/team1157.org/sitemap.xml
