@@ -20,25 +20,16 @@ jobs:
 
       # Build the site and initialize it as a git repo
       - name: Build site
-        run: |
-          zola build --base-url https://team1157.github.io
-          cd public
-          git init
+        run: zola build --base-url https://team1157.github.io
       
       # Commit and push the built site
       - name: Push site
-        uses: EndBug/add-and-commit@v7
-        with:
-          # Add the contents of `public`
-          add: "."
-          # Set the author to the team email
-          author_name: landshark
-          author_email: "1157landsharkrobotics@gmail.com"
-          default_author: user_info
-          # Commit to the github pages branch
-          branch: gh-pages
-          # Commit message
-          message: "Build and deploy site"
-          push: true
+        uses: s0/git-publish-subdir-action@v2.5.0
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: public
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build and desploy site"
           
           
