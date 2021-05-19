@@ -20,7 +20,7 @@ jobs:
 
       # Build the site and initialize it as a git repo
       - name: Build site
-        run: zola build --base-url https://team1157.github.io
+        run: zola build --base-url https://team1157.github.io/team1157.org
       
       # Commit and push the built site
       - name: Push site
