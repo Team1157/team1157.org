@@ -1,8 +1,8 @@
 +++
-title = "FRC 2011"
+title = "Landshark"
 date = 2011-01-08
 [extra]
-project_type = "Competition"
+project_type = "Competition - FRC 2011"
 +++
 
 FRC 2011

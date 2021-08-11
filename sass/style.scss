@@ -103,6 +103,7 @@ main {
     flex: 1 0; // Makes the footer stick to the bottom
     max-width: 1000px;
     width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 15px;
     
@@ -121,9 +122,11 @@ main {
     a.project {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         background: $light-bg;
         border-radius: 1px;
         box-sizing: border-box;
+        // height: calc(min(20vw, 150px));
         height: 150px;
         width: 100%;
         margin-bottom: 15px;
@@ -141,25 +144,36 @@ main {
             }
             
             .title {
+                // font-size: calc(min(36px, 5vw));
                 font-size: 36px;
                 font-weight: bold;
                 margin: 5px 0;
             }
             
-            .desc {
-                
-            }
+            // .type, .desc {
+            //     font-size: calc(min(15px, 2vw));
+            // }
+
+            // @media only screen and (max-width: 600px) {
+            //     .desc {
+            //         display: none;
+            //     }
+            // }
         }
         
         img.project-banner {
-            flex: 0 1;
+            flex: 1 1;
             height: 100%;
+            width: 100%;
+            max-width: 500px;
+            display: block;
             clip-path: polygon(
-                100px 0,
+                75px 0,
                 0 100%,
                 100% 100%,
                 100% 0
-            )
+            );
+            object-fit: cover;
         }
     }
     a.project:hover {

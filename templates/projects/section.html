@@ -11,7 +11,7 @@
             {% if project.extra.project_type %}
             <span class="type">{{ project.extra.project_type }}</span>
             {% endif %}
-            <span class="title">{{ project.title }}</span>
+            <span class="title">{% if project.extra.display_name %}{{ project.extra.display_name }}{% else %}{{ project.title }}{% endif %}</span>
             <span class="desc">{{ project.description }}</span>
         </div>
         {% if project.extra.banner %}
