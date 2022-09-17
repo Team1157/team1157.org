@@ -1,0 +1,109 @@
+---
+export interface Props {}
+---
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img
+                src="/icon.svg"
+                alt="A bitey logo"
+                class="icon"
+                width="512"
+                height="512"
+            />
+            &nbsp;
+            Bolder High Landsharks
+        </a>
+        <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="aBoldNavbar"
+            onclick="document.getElementById('navmenu').classList.toggle('is-active');"
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="aBoldNavbar" class="navbar-menu" id="navmenu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/"> Home</a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a
+                    role="button"
+                    class="navbar-link"
+                    onclick="document.getElementById('first-nav-menu').classList.toggle('is-active');"
+                >
+                    FIRST
+                </a>
+
+                <div class="navbar-dropdown" id="first-nav-menu">
+                    <a class="navbar-item" href="/first/">Information</a>
+                    <hr class="navbar-divider" />
+                    <a class="navbar-item" href="/first/2011.html">2011</a>
+                    <a class="navbar-item" href="/first/2014.html">2014</a>
+                    <a class="navbar-item" href="/first/2015.html">2015</a>
+                    <a class="navbar-item" href="/first/2016.html">2016</a>
+                    <a class="navbar-item" href="/first/2017.html">2017</a>
+                    <a class="navbar-item" href="/first/2018.html">2018</a>
+                    <a class="navbar-item" href="/first/2019.html">2019</a>
+                    <a class="navbar-item" href="/first/2020.html">2020</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a
+                    role="button"
+                    class="navbar-link"
+                    onclick="document.getElementById('mate-nav-menu').classList.toggle('is-active');"
+                >
+                    MATE
+                </a>
+
+                <div class="navbar-dropdown" id="mate-nav-menu">
+                    <a class="navbar-item" href="/mate/">Information</a>
+                    <hr class="navbar-divider" />
+                    <a class="navbar-item" href="/mate/2021.html">2021</a>
+                    <a class="navbar-item" href="/mate/2022.html">2022</a>
+                    <a class="navbar-item" href="/mate/2023.html">2023</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a
+                    role="button"
+                    class="navbar-link"
+                    onclick="document.getElementById('other-stuff-nav-menu').classList.toggle('is-active');"
+                >
+                    Other things
+                </a>
+
+                <div class="navbar-dropdown" id="other-stuff-nav-menu">
+                    <a class="navbar-item" href="/side-projects/jenny.html"
+                        >Jenny</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<style>
+    nav.navbar {
+        min-height: 5vh !important;
+    }
+
+    .navbar-brand {
+        min-height: 5vh !important;
+    }
+
+    img.icon {
+        display: block;
+        max-width: 5vh;
+        max-height: 5vh;
+        width: auto;
+        height: auto;
+    }
+</style>

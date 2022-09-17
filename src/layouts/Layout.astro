@@ -1,0 +1,45 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+}
+
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg" href="/icon-white.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navbar />
+		<div class="container">
+			<div
+				class="columns is-flex is-multiline is-mobile"
+			>
+				<slot />
+			</div>
+		</div>
+		<Footer />
+		<style>
+			html,
+			body {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+
+		<style is:global>
+			@import "/style/bulma.css";
+		</style>
+	</body>
+</html>
